@@ -1,0 +1,28 @@
+---
+import { cn } from '@/lib/utils';
+import type { MainNavItem } from '@/types';
+
+type Props = {
+	items: MainNavItem[];
+};
+
+const { items } = Astro.props;
+---
+
+{
+	items?.length ? (
+		<nav class="hidden gap-12 md:flex">
+			{items?.map((item) => (
+				<a
+					href={item.disabled ? '#' : item.href}
+					class={cn(
+						'flex items-center text-md font-medium transition-colors text-foreground hover:text-foreground/80',
+						item.disabled && 'cursor-not-allowed opacity-80'
+					)}
+				>
+					{item.title}
+				</a>
+			))}
+		</nav>
+	) : null
+}

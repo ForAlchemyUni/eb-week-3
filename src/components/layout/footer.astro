@@ -1,0 +1,21 @@
+---
+import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/utils';
+
+type Props = {
+	className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<footer class={cn(className)}>
+	<div class="container flex flex-col items-center justify-between gap-4 py-10">
+		<div class="flex flex-col items-center gap-2 px-4 md:flex-row">
+			<p class="text-center text-md leading-loose md:text-left balance-text">
+				{siteConfig.name}
+				{` ${new Date().getFullYear()}`}
+			</p>
+		</div>
+	</div>
+</footer>
