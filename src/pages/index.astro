@@ -1,9 +1,12 @@
 ---
+import Explorer from '@/components/explorer';
 import MainLayout from '@/layouts/main-layout.astro';
 ---
 
 <MainLayout title="NEWkidONtheBLOCK">
-	<section class="space-y-6 py-8 md:pb-12 md:pt-10 lg:py-32">
-		<div class="container flex max-w-[64rem] flex-col items-center gap-4 text-center"></div>
+	<section class="space-y-6 py-8 md:pb-12 md:pt-10">
+		<div class="container flex flex-col items-center gap-4 text-center">
+			<Explorer client:idle />
+		</div>
 	</section>
 </MainLayout>
